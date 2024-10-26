@@ -12,7 +12,8 @@ let package = Package(
             targets: ["Letterpress"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/gonzalezreal/swift-markdown-ui.git", from: "2.4.0"),
+        .package(url: "https://github.com/lovetodream/swift-markdown-ui.git", branch: "main"),
+//       .package(url: "https://github.com/gonzalezreal/swift-markdown-ui.git", from: "2.4.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
