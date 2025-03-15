@@ -12,36 +12,17 @@ let package = Package(
             targets: ["Letterpress"]),
     ],
     dependencies: [
-
-//        .package(wildthink: "Carbon14"),
-//        .package(wildthink: "Letterpress"),
-//        .package(wildthink: "InterfaceBuilder"),
-        .package(wildthink: "swift-markdown-ui", in: "ThirdParty"),
         .package(wildthink: "AEXML", in: "ThirdParty"),
-
-//        .package(url: "https://github.com/lovetodream/swift-markdown-ui.git", branch: "main"),
-//       .package(url: "https://github.com/gonzalezreal/swift-markdown-ui.git", from: "2.4.1"),
-//        .package(path: "/Users/jason/dev/ThirdParty/swift-markdown-ui"),
-//        .package(path: "/Users/jason/dev/ThirdParty/swift-markdown-ui"),
-        //       .package(url: "https://github.com/swiftlang/swift-markdown.git", from: "0.5.0"),
-       .package(url: "https://github.com/swiftlang/swift-markdown.git", branch: "main"),
-
-        .package(url: "https://github.com/gonzalezreal/swift-markdown-ui.git", branch: "main"),
-        .package(url: "https://github.com/groue/GRMustache.swift", from: "5.0.0"),
-        .package(url: "https://github.com/apple/swift-markdown.git", branch: "main"),
-
+        .package(wildthink: "swift-markdown", in: "ThirdParty"),
+        .package(url: "https://github.com/hummingbird-project/swift-mustache.git", from: "2.0.0")
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "Letterpress",
             dependencies: [
-                .product(name: "MarkdownUI", package: "swift-markdown-ui"),
                 .product(name: "Markdown", package: "swift-markdown"),
                 .product(name: "AEXML", package: "AEXML"),
-                .product(name: "Mustache", package: "grmustache.swift"),
-            ],
+                .product(name: "Mustache", package: "swift-mustache")            ],
             resources: [
                 .process("Resources/Icons.xcassets"),
             ]
