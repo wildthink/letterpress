@@ -12,6 +12,7 @@ let package = Package(
             targets: ["Letterpress"]),
     ],
     dependencies: [
+
 //        .package(wildthink: "Carbon14"),
 //        .package(wildthink: "Letterpress"),
 //        .package(wildthink: "InterfaceBuilder"),
@@ -24,6 +25,11 @@ let package = Package(
 //        .package(path: "/Users/jason/dev/ThirdParty/swift-markdown-ui"),
         //       .package(url: "https://github.com/swiftlang/swift-markdown.git", from: "0.5.0"),
        .package(url: "https://github.com/swiftlang/swift-markdown.git", branch: "main"),
+
+        .package(url: "https://github.com/gonzalezreal/swift-markdown-ui.git", branch: "main"),
+        .package(url: "https://github.com/groue/GRMustache.swift", from: "5.0.0"),
+        .package(url: "https://github.com/apple/swift-markdown.git", branch: "main"),
+
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -34,6 +40,7 @@ let package = Package(
                 .product(name: "MarkdownUI", package: "swift-markdown-ui"),
                 .product(name: "Markdown", package: "swift-markdown"),
                 .product(name: "AEXML", package: "AEXML"),
+                .product(name: "Mustache", package: "grmustache.swift"),
             ],
             resources: [
                 .process("Resources/Icons.xcassets"),
